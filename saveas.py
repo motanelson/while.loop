@@ -45,3 +45,7 @@ def starts(title:str="save as ",backgrouds:str="black",foregrouds:str="white",ty
     apps=myapps(root,title,backgrouds,foregrouds,types)
     root.mainloop()
     return rets
+
+
+a=starts(types=".py")
+print(a)
