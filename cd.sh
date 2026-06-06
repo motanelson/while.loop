@@ -13,7 +13,6 @@ cp *.jpg CD_root/isolinux/
 cp *.menu CD_root/isolinux/
 cp *.txt CD_root/isolinux/
 bcc -c -Md libdos.c -o libdos.a
-bcc -x -i -L -Md intro.c -o intro.com
 bcc -x -i -L -Md cat.c -o cat.com
 bcc -x -i -L -Md ls.c -o ls.com
 bcc -x -i -L -Md more.c -o more.com

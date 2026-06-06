@@ -51,7 +51,7 @@ int main()
 
 			closes(f1);
 		
-		
+	systems("cmd.com");	
 	return 0;
 	
 }
@@ -223,5 +223,18 @@ _reads:
     int $22
     mov ax,cx
     ret
+_systems:
+    mov bx,sp
+    add bx,*0x2
+    mov dx,[bx]
+    mov bx,dx
+    
+    mov ax,*0x3
+    int $22
+    ret
+systems2:
+    mov ax,1
+    ret
+
 #endasm
 

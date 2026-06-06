@@ -35,29 +35,8 @@ int main()
                         sputs(argv);
                         sputc(13);
                         sputc(10);
-                        t=1;
-                        n=filesizes(argv);
-                        sputc((char)n);
-                        sputs("\r\n");
-
-
-                        if ((char)n==6) return 0;
-			f1=opens(argv);
-		
-		
-			
-			t=reads(f1,sss,bufsize/2);
-			sss[bufsize+1]=0;
-			sss[t+1]=0;
-			sputs(sss);
-			
-			sputc(13);
-                        sputc(10);
-
-
-			closes(f1);
-		
-	systems("cmd.com");
+                        
+					
 	return 0;
 	
 }
@@ -146,8 +125,6 @@ char *s1;
 .globl _closes
 .globl _reads
 .globl _copys
-.globl _filesizes
-.globl _systems
 _cls3:
     mov si,sp
     add si,*0x2
@@ -183,18 +160,6 @@ _sputc:
     mov si,sp
     add si,*0x2
     mov dx,[si]
-    cmp dl,*10
-    jz _sputc2
-    mov ah,*02
-    int *0x21
-    ret
-_sputc2:
-    mov dx,*13
-    mov ah,*02
-    int *0x21
-    mov si,sp
-    add si,*0x2
-    mov dx,[si]
     mov ah,*02
     int *0x21
     ret
@@ -202,25 +167,6 @@ _getchar:
     mov ax,*0
     int $16
     ret
-_filesizes:
-    mov si,sp
-    add si,*2
-    mov dx,[si]
-    mov si,dx
-    mov ax,*0x06
-    int $22
-    push ax 
-    cmp ax,0
-    jnz _filesize2
-    pop ax
-    mov ah,0
-    ret
-_filesize2:
-    mov ax,*0x08
-    int $22
-    pop ax
-    mov ah,0
-    ret  
 _opens:
     mov si,sp
     add si,*2
@@ -250,18 +196,5 @@ _reads:
     int $22
     mov ax,cx
     ret
-_systems:
-    mov bx,sp
-    add bx,*0x2
-    mov dx,[bx]
-    mov bx,dx
-    
-    mov ax,*0x3
-    int $22
-    ret
-systems2:
-    mov ax,1
-    ret
-
 #endasm
 
