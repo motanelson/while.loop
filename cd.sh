@@ -16,6 +16,7 @@ bcc -c -Md libdos.c -o libdos.a
 bcc -x -i -L -Md intro.c -o intro.com
 bcc -x -i -L -Md cat.c -o cat.com
 bcc -x -i -L -Md ls.c -o ls.com
+bcc -x -i -L -Md more.c -o more.com
 cp *.c32 CD_root/isolinux/
 cp *.com CD_root/isolinux/
 ls CD_root/isolinux > CD_root/isolinux/ls.txt
