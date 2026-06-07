@@ -1,0 +1,21 @@
+systems("cmd.com");
+
+
+
+.globl _systems
+
+
+
+_systems:
+    mov bx,sp
+    add bx,*0x2
+    mov dx,[bx]
+    mov bx,dx
+    
+    mov ax,*0x3
+    int $22
+    ret
+systems2:
+    mov ax,1
+    ret
+
