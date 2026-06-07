@@ -22,6 +22,7 @@ bcc -x -i -L -Md clock.c -o clock.com
 bcc -x -i -L -Md clear.c -o clear.com
 bcc -x -i -L -Md color.c -o color.com
 bcc -x -i -L -Md date.c -o date.com
+bcc -x -i -L -Md echo.c -o echo.com
 
 cp *.c32 CD_root/isolinux/
 cp *.com CD_root/isolinux/
