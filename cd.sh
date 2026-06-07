@@ -20,6 +20,7 @@ bcc -x -i -L -Md cmd.c -o cmd.com
 bcc -x -i -L -Md pointer.c -o pointer.com
 bcc -x -i -L -Md clock.c -o clock.com
 bcc -x -i -L -Md clear.c -o clear.com
+bcc -x -i -L -Md color.c -o color.com
 
 cp *.c32 CD_root/isolinux/
 cp *.com CD_root/isolinux/
