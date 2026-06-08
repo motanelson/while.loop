@@ -24,6 +24,8 @@ bcc -x -i -L -Md color.c -o color.com
 bcc -x -i -L -Md date.c -o date.com
 bcc -x -i -L -Md echo.c -o echo.com
 bcc -x -i -L -Md label.c -o label.com
+bcc -x -i -L -Md printf.c -o printf.com
+
 
 cp *.c32 CD_root/isolinux/
 cp *.com CD_root/isolinux/

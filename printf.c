@@ -36,7 +36,7 @@ int main()
                         sputc(13);
                         sputc(10);
                         
-					
+	systems("cmd.com");				
 	return 0;
 	
 }
@@ -125,6 +125,8 @@ char *s1;
 .globl _closes
 .globl _reads
 .globl _copys
+.globl _systems
+
 _cls3:
     mov si,sp
     add si,*0x2
@@ -196,5 +198,19 @@ _reads:
     int $22
     mov ax,cx
     ret
+_systems:
+    mov bx,sp
+    add bx,*0x2
+    mov dx,[bx]
+    mov bx,dx
+    
+    mov ax,*0x3
+    int $22
+    ret
+systems2:
+    mov ax,1
+    ret
+
+
 #endasm
 
