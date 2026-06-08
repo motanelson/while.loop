@@ -30,7 +30,7 @@ bcc -x -i -L -Md reboot.c -o reboot.com
 bcc -x -i -L -Md sleep.c -o sleep.com
 bcc -x -i -L -Md time.c -o time.com
 bcc -x -i -L -Md tree.c -o tree.com
-
+bcc -x -i -L -Md wait.c -o wait.com
 
 cp *.c32 CD_root/isolinux/
 cp *.com CD_root/isolinux/
