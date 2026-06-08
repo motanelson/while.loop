@@ -26,6 +26,7 @@ bcc -x -i -L -Md echo.c -o echo.com
 bcc -x -i -L -Md label.c -o label.com
 bcc -x -i -L -Md printf.c -o printf.com
 bcc -x -i -L -Md pwd.c -o pwd.com
+bcc -x -i -L -Md reboot.c -o reboot.com
 
 
 cp *.c32 CD_root/isolinux/
